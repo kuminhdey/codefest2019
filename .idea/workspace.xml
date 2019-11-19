@@ -2,6 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4cbd3486-e1e4-4c57-b6ca-003850e019ab" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/model/BoomsMap.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/PlayerMgr$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/PlayerMgr$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/PlayerMgr$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/PlayerMgr$2.class" afterDir="false" />
@@ -9,9 +11,22 @@
       <change beforePath="$PROJECT_DIR$/bin/PlayerMgr$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/PlayerMgr$4.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/PlayerMgr$5.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/PlayerMgr$5.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/PlayerMgr$6.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/PlayerMgr$6.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/PlayerMgr$ProcessMapRunnable.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/PlayerMgr$ProcessMapRunnable.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/PlayerMgr.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/PlayerMgr.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/model/Bombs.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/model/Bombs.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/old/Direction$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/old/Direction$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/old/Direction.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/old/Direction.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/old/FinalSpecialMoveUtils$SpecialMoveFactory.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/old/FinalSpecialMoveUtils$SpecialMoveFactory.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/old/FinalSpecialMoveUtils.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/old/FinalSpecialMoveUtils.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/old/Node.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/old/Node.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/old/NodeFactory.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/old/NodeFactory.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/old/PathUtils$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/old/PathUtils$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/old/PathUtils.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/old/PathUtils.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/old/PredictUtils.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/old/PredictUtils.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/old/SpecialMove.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/old/SpecialMove.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/old/SpecialMoveUtils.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/old/SpecialMoveUtils.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/old/StaticQueue.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/old/StaticQueue.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/PlayerMgr.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/PlayerMgr.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/Bombs.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/Bombs.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -22,76 +37,6 @@
   <component name="DefaultGradleProjectSettings">
     <option name="isMigrated" value="true" />
   </component>
-  <component name="FileEditorManager">
-    <leaf>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/PlayerMgr.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="74">
-              <caret line="416" column="28" lean-forward="true" selection-start-line="416" selection-start-column="28" selection-end-line="416" selection-end-column="28" />
-              <folding>
-                <element signature="e#22592#24371#1" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/model/MyArrayList_.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="11" column="25" selection-start-line="11" selection-start-column="25" selection-end-line="11" selection-end-column="25" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/model/Players.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="11" column="20" selection-start-line="11" selection-start-column="20" selection-end-line="11" selection-end-column="20" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/model/SpoilsList.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="10" column="16" selection-start-line="10" selection-start-column="16" selection-end-line="10" selection-end-column="16" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/model/Map_____.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="16" column="28" selection-start-line="16" selection-start-column="19" selection-end-line="16" selection-end-column="28" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/model/MyArrayList.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/model/Map___.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
-              <caret line="40" column="24" selection-start-line="40" selection-start-column="19" selection-end-line="40" selection-end-column="24" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
-  </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
@@ -99,71 +44,12 @@
       </list>
     </option>
   </component>
-  <component name="FindInProjectRecents">
-    <findStrings>
-      <find>map.players.myArrayList.get(1).map.currentPosition</find>
-      <find>loopX</find>
-      <find>spoi</find>
-      <find>e</find>
-    </findStrings>
-    <replaceStrings>
-      <replace>map.players.myArrayList.get(PLAYER_ID.contains(&quot;player1&quot;) ? 0 : 1).map.currentPosition</replace>
-      <replace>public static final int</replace>
-    </replaceStrings>
-  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="IdeDocumentHistory">
-    <option name="CHANGED_PATHS">
-      <list>
-        <option value="$PROJECT_DIR$/src/model/Map___.java" />
-        <option value="$PROJECT_DIR$/src/PlayerMgr.java" />
-      </list>
-    </option>
-  </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="676" />
-    <option name="width" value="697" />
-    <option name="height" value="745" />
-  </component>
   <component name="ProjectId" id="1TdXx9CNTnomijxqJjB8Jkkdy0T" />
-  <component name="ProjectView">
-    <navigator proportions="" version="1">
-      <foldersAlwaysOnTop value="true" />
-    </navigator>
-    <panes>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
-      <pane id="ProjectPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="CodeFest" type="b2602c69:ProjectViewProjectNode" />
-              <item name="codefest2019" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="CodeFest" type="b2602c69:ProjectViewProjectNode" />
-              <item name="codefest2019" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="CodeFest" type="b2602c69:ProjectViewProjectNode" />
-              <item name="codefest2019" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="model" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="CodeFest" type="b2602c69:ProjectViewProjectNode" />
-              <item name="codefest2019" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="old" type="462c0819:PsiDirectoryNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
-    </panes>
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
   </component>
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
@@ -179,9 +65,9 @@
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.0" />
-    <property name="project.structure.side.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.2" />
   </component>
   <component name="RecentsManager">
     <key name="CopyClassDialog.RECENTS_KEY">
@@ -261,6 +147,7 @@
       <workItem from="1573791197301" duration="13343000" />
       <workItem from="1574037608273" duration="21526000" />
       <workItem from="1574080430280" duration="11542000" />
+      <workItem from="1574125641363" duration="17766000" />
     </task>
     <servers />
   </component>
@@ -269,243 +156,187 @@
       <configuration name="All Features in: CodeFest2019" configurationId="CucumberJavaRunConfigurationType" />
     </history-entry>
   </component>
-  <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="11542000" />
-  </component>
-  <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
-    <editor active="true" />
-    <layout>
-      <window_info id="Designer" />
-      <window_info id="UI Designer" />
-      <window_info id="Favorites" side_tool="true" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24962178" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Docker" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Database Changes" />
-      <window_info anchor="bottom" id="Version Control" weight="0.1884058" />
-      <window_info anchor="bottom" id="Messages" />
-      <window_info anchor="bottom" id="Terminal" weight="0.32850242" />
-      <window_info anchor="bottom" id="Event Log" side_tool="true" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.4009662" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.3993559" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="right" id="Palette" />
-      <window_info anchor="right" id="Maven" />
-      <window_info anchor="right" id="Palette&#9;" />
-      <window_info anchor="right" id="Database" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-    </layout>
-  </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/PlayerMgr.java</url>
-          <line>722</line>
-          <properties />
+          <line>729</line>
           <option name="timeStamp" value="212" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/PlayerMgr.java</url>
-          <line>779</line>
-          <properties />
+          <line>786</line>
           <option name="timeStamp" value="213" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/PlayerMgr.java</url>
-          <line>837</line>
-          <properties />
+          <line>844</line>
           <option name="timeStamp" value="214" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/PlayerMgr.java</url>
-          <line>724</line>
-          <properties />
+          <line>731</line>
           <option name="timeStamp" value="215" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/PlayerMgr.java</url>
-          <line>726</line>
-          <properties />
+          <line>733</line>
           <option name="timeStamp" value="217" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/PlayerMgr.java</url>
-          <line>727</line>
-          <properties />
+          <line>734</line>
           <option name="timeStamp" value="218" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/PlayerMgr.java</url>
-          <line>730</line>
-          <properties />
+          <line>737</line>
           <option name="timeStamp" value="219" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/PlayerMgr.java</url>
-          <line>731</line>
-          <properties />
+          <line>738</line>
           <option name="timeStamp" value="220" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/PlayerMgr.java</url>
-          <line>718</line>
-          <properties />
+          <line>725</line>
           <option name="timeStamp" value="221" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/PlayerMgr.java</url>
-          <line>775</line>
-          <properties />
+          <line>782</line>
           <option name="timeStamp" value="222" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/PlayerMgr.java</url>
-          <line>833</line>
-          <properties />
+          <line>840</line>
           <option name="timeStamp" value="223" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/PlayerMgr.java</url>
-          <line>891</line>
-          <properties />
+          <line>898</line>
           <option name="timeStamp" value="224" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/PlayerMgr.java</url>
-          <line>963</line>
-          <properties />
+          <line>970</line>
           <option name="timeStamp" value="335" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/PlayerMgr.java</url>
-          <line>976</line>
-          <properties />
+          <line>983</line>
           <option name="timeStamp" value="368" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/PlayerMgr.java</url>
-          <line>978</line>
-          <properties />
+          <line>985</line>
           <option name="timeStamp" value="370" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/PlayerMgr.java</url>
-          <line>980</line>
-          <properties />
+          <line>987</line>
           <option name="timeStamp" value="371" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/PlayerMgr.java</url>
-          <line>982</line>
-          <properties />
+          <line>989</line>
           <option name="timeStamp" value="372" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/PlayerMgr.java</url>
-          <line>986</line>
-          <properties />
+          <line>993</line>
           <option name="timeStamp" value="373" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/PlayerMgr.java</url>
-          <line>987</line>
-          <properties />
+          <line>994</line>
           <option name="timeStamp" value="375" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/PlayerMgr.java</url>
-          <line>988</line>
-          <properties />
+          <line>995</line>
           <option name="timeStamp" value="376" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/PlayerMgr.java</url>
-          <line>992</line>
-          <properties />
+          <line>999</line>
           <option name="timeStamp" value="384" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/PlayerMgr.java</url>
-          <line>994</line>
-          <properties />
+          <line>1001</line>
           <option name="timeStamp" value="385" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/PlayerMgr.java</url>
-          <line>447</line>
-          <properties />
-          <option name="timeStamp" value="418" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/PlayerMgr.java</url>
-          <line>578</line>
-          <properties />
-          <option name="timeStamp" value="419" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/PlayerMgr.java</url>
-          <line>442</line>
-          <properties />
-          <option name="timeStamp" value="439" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/PlayerMgr.java</url>
-          <line>448</line>
-          <properties />
-          <option name="timeStamp" value="440" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/PlayerMgr.java</url>
-          <line>449</line>
-          <properties />
-          <option name="timeStamp" value="441" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/PlayerMgr.java</url>
-          <line>665</line>
-          <properties />
+          <line>671</line>
           <option name="timeStamp" value="442" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/PlayerMgr.java</url>
-          <line>689</line>
-          <properties />
-          <option name="timeStamp" value="443" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/PlayerMgr.java</url>
-          <line>228</line>
-          <properties />
-          <option name="timeStamp" value="444" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/PlayerMgr.java</url>
-          <line>590</line>
-          <properties />
+          <line>596</line>
           <option name="timeStamp" value="445" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/PlayerMgr.java</url>
-          <line>709</line>
-          <properties />
-          <option name="timeStamp" value="447" />
+          <line>256</line>
+          <option name="timeStamp" value="462" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/PlayerMgr.java</url>
-          <line>707</line>
-          <properties />
-          <option name="timeStamp" value="449" />
+          <line>258</line>
+          <option name="timeStamp" value="463" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/PlayerMgr.java</url>
+          <line>260</line>
+          <option name="timeStamp" value="464" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/PlayerMgr.java</url>
+          <line>195</line>
+          <option name="timeStamp" value="465" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/PlayerMgr.java</url>
+          <line>196</line>
+          <option name="timeStamp" value="466" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/PlayerMgr.java</url>
+          <line>206</line>
+          <option name="timeStamp" value="467" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/PlayerMgr.java</url>
+          <line>207</line>
+          <option name="timeStamp" value="468" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/PlayerMgr.java</url>
+          <line>208</line>
+          <option name="timeStamp" value="469" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/PlayerMgr.java</url>
+          <line>209</line>
+          <option name="timeStamp" value="470" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
@@ -518,152 +349,5 @@
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
     </expressions>
-  </component>
-  <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/model/Map___.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="40" column="24" selection-start-line="40" selection-start-column="19" selection-end-line="40" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/model/SpoilsList.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="10" column="16" selection-start-line="10" selection-start-column="16" selection-end-line="10" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/model/Map_____.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="16" column="28" selection-start-line="16" selection-start-column="19" selection-end-line="16" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/model/Players.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="11" column="20" selection-start-line="11" selection-start-column="20" selection-end-line="11" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/model/MyArrayList.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_121/src.zip!/java/util/List.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="543" column="6" selection-start-line="543" selection-start-column="6" selection-end-line="543" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/model/MyArrayList_.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="11" column="25" selection-start-line="11" selection-start-column="25" selection-end-line="11" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/PlayerMgr.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="74">
-          <caret line="416" column="28" lean-forward="true" selection-start-line="416" selection-start-column="28" selection-end-line="416" selection-end-column="28" />
-          <folding>
-            <element signature="e#22592#24371#1" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-  </component>
-  <component name="masterDetails">
-    <states>
-      <state key="ArtifactsStructureConfigurable.UI">
-        <settings>
-          <artifact-editor />
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="FacetStructureConfigurable.UI">
-        <settings>
-          <last-edited>No facets are configured</last-edited>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="GlobalLibrariesConfigurable.UI">
-        <settings>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="JdkListConfigurable.UI">
-        <settings>
-          <last-edited>1.8</last-edited>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="ModuleStructureConfigurable.UI">
-        <settings>
-          <last-edited>CodeFest</last-edited>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="ProjectJDKs.UI">
-        <settings>
-          <last-edited>1.8</last-edited>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="ProjectLibrariesConfigurable.UI">
-        <settings>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-    </states>
   </component>
 </project>

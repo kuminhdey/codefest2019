@@ -9,6 +9,6 @@ public class Bombs {
 
     @SerializedName("myArrayList")
     @Expose
-    public List<Booms> myArrayList = null;
+    public List<BoomsMap> myArrayList = null;
 
 }
