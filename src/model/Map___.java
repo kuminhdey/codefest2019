@@ -39,5 +39,8 @@ public class Map___ {
     @SerializedName("speed")
     @Expose
     public Integer speed;
+    @SerializedName("power")
+    @Expose
+    public Integer power;
 
 }

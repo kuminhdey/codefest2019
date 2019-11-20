@@ -2,31 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4cbd3486-e1e4-4c57-b6ca-003850e019ab" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/model/BoomsMap.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/PlayerMgr$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/PlayerMgr$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/PlayerMgr$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/PlayerMgr$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/PlayerMgr$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/PlayerMgr$3.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/PlayerMgr$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/PlayerMgr$4.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/PlayerMgr$5.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/PlayerMgr$5.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/PlayerMgr$6.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/PlayerMgr$6.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/PlayerMgr.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/PlayerMgr.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/model/Bombs.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/model/Bombs.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/old/Direction$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/old/Direction$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/old/Direction.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/old/Direction.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/old/FinalSpecialMoveUtils$SpecialMoveFactory.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/old/FinalSpecialMoveUtils$SpecialMoveFactory.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/old/FinalSpecialMoveUtils.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/old/FinalSpecialMoveUtils.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/old/Node.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/old/Node.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/old/NodeFactory.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/old/NodeFactory.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/old/PathUtils$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/old/PathUtils$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/old/PathUtils.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/old/PathUtils.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/old/PredictUtils.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/old/PredictUtils.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/old/SpecialMove.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/old/SpecialMove.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/old/SpecialMoveUtils.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/old/SpecialMoveUtils.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/old/StaticQueue.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/old/StaticQueue.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/PlayerMgr.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/PlayerMgr.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/Bombs.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/Bombs.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/Map___.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/Map___.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -147,7 +125,8 @@
       <workItem from="1573791197301" duration="13343000" />
       <workItem from="1574037608273" duration="21526000" />
       <workItem from="1574080430280" duration="11542000" />
-      <workItem from="1574125641363" duration="17766000" />
+      <workItem from="1574125641363" duration="18671000" />
+      <workItem from="1574229756289" duration="7086000" />
     </task>
     <servers />
   </component>
@@ -164,7 +143,9 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>
@@ -175,168 +156,123 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/PlayerMgr.java</url>
-          <line>729</line>
+          <line>783</line>
           <option name="timeStamp" value="212" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/PlayerMgr.java</url>
-          <line>786</line>
+          <line>840</line>
           <option name="timeStamp" value="213" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/PlayerMgr.java</url>
-          <line>844</line>
+          <line>898</line>
           <option name="timeStamp" value="214" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/PlayerMgr.java</url>
-          <line>731</line>
+          <line>785</line>
           <option name="timeStamp" value="215" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/PlayerMgr.java</url>
-          <line>733</line>
+          <line>787</line>
           <option name="timeStamp" value="217" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/PlayerMgr.java</url>
-          <line>734</line>
+          <line>788</line>
           <option name="timeStamp" value="218" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/PlayerMgr.java</url>
-          <line>737</line>
+          <line>791</line>
           <option name="timeStamp" value="219" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/PlayerMgr.java</url>
-          <line>738</line>
+          <line>792</line>
           <option name="timeStamp" value="220" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/PlayerMgr.java</url>
-          <line>725</line>
+          <line>779</line>
           <option name="timeStamp" value="221" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/PlayerMgr.java</url>
-          <line>782</line>
+          <line>836</line>
           <option name="timeStamp" value="222" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/PlayerMgr.java</url>
-          <line>840</line>
+          <line>894</line>
           <option name="timeStamp" value="223" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/PlayerMgr.java</url>
-          <line>898</line>
+          <line>952</line>
           <option name="timeStamp" value="224" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/PlayerMgr.java</url>
-          <line>970</line>
+          <line>1024</line>
           <option name="timeStamp" value="335" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/PlayerMgr.java</url>
-          <line>983</line>
+          <line>1037</line>
           <option name="timeStamp" value="368" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/PlayerMgr.java</url>
-          <line>985</line>
+          <line>1039</line>
           <option name="timeStamp" value="370" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/PlayerMgr.java</url>
-          <line>987</line>
+          <line>1041</line>
           <option name="timeStamp" value="371" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/PlayerMgr.java</url>
-          <line>989</line>
+          <line>1042</line>
           <option name="timeStamp" value="372" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/PlayerMgr.java</url>
-          <line>993</line>
+          <line>1044</line>
           <option name="timeStamp" value="373" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/PlayerMgr.java</url>
-          <line>994</line>
+          <line>1045</line>
           <option name="timeStamp" value="375" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/PlayerMgr.java</url>
-          <line>995</line>
+          <line>1046</line>
           <option name="timeStamp" value="376" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/PlayerMgr.java</url>
-          <line>999</line>
+          <line>1060</line>
           <option name="timeStamp" value="384" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/PlayerMgr.java</url>
-          <line>1001</line>
+          <line>1062</line>
           <option name="timeStamp" value="385" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/PlayerMgr.java</url>
-          <line>671</line>
+          <line>672</line>
           <option name="timeStamp" value="442" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/PlayerMgr.java</url>
-          <line>596</line>
+          <line>597</line>
           <option name="timeStamp" value="445" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/PlayerMgr.java</url>
-          <line>256</line>
-          <option name="timeStamp" value="462" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/PlayerMgr.java</url>
-          <line>258</line>
-          <option name="timeStamp" value="463" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/PlayerMgr.java</url>
-          <line>260</line>
-          <option name="timeStamp" value="464" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/PlayerMgr.java</url>
-          <line>195</line>
-          <option name="timeStamp" value="465" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/PlayerMgr.java</url>
-          <line>196</line>
-          <option name="timeStamp" value="466" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/PlayerMgr.java</url>
-          <line>206</line>
-          <option name="timeStamp" value="467" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/PlayerMgr.java</url>
-          <line>207</line>
-          <option name="timeStamp" value="468" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/PlayerMgr.java</url>
-          <line>208</line>
-          <option name="timeStamp" value="469" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/PlayerMgr.java</url>
-          <line>209</line>
-          <option name="timeStamp" value="470" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
