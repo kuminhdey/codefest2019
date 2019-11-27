@@ -47,8 +47,8 @@ public class PlayerMgr {
 
     public static final String HOST = "https://codefest.techover.io";
 
-    public static final String GAME_ID = "72e65a1c-d930-4e17-bb18-656e97391d78";
-    public static final String PLAYER_ID = "player1-xxx-xxx-xxx";
+    public static final String GAME_ID = "9ff56130-4abf-4e43-9b02-c46895df955a";
+    public static final String PLAYER_ID = "player1-xxx";
     public static String PLAYER_1 = "";
     public static String PLAYER_2 = "";
 
@@ -200,21 +200,25 @@ public class PlayerMgr {
 //                        info.map.setTag("start-game");
 //                        isWaitEnemyBomb = false;
 //                    }
-
-                    if (PLAYER_ID.equals(info.map.getPlayerId()) && info.map.getTag().equals("bomb:setup")) {
-                        isBombSetup = true;
-                    } else if (PLAYER_ID.equals(info.map.getPlayerId()) && info.map.getTag().equals("bomb:explosed")) {
-                        isBombSetup = false;
-                        isWaitBomb = true;
+                    try {
+                        if (PLAYER_ID.contains(info.map.getPlayerId()) && info.map.getTag().equals("bomb:setup")) {
+                            isBombSetup = true;
+                        } else if (PLAYER_ID.contains(info.map.getPlayerId()) && info.map.getTag().equals("bomb:explosed")) {
+                            isBombSetup = false;
+                            isWaitBomb = true;
 //                        isMoveBack = test(oldPostion, info);
+                        }
+                    } catch (Exception e) {
+
                     }
-                    if (PLAYER_ID.equals(info.map.getPlayerId()) && "player:stop-moving".equals(info.map.getTag()) && isWaitEnemyBomb == false || PLAYER_ID.equals(info.map.getPlayerId()) && info.map.getTag().equals("bomb:explosed") && !isWaitEnemyBomb || info.map.getTag().equals("start-game") && !isWaitEnemyBomb) {
+
+                    if (  info.map.getTag().equals("start-game") && !isWaitEnemyBomb || PLAYER_ID.contains(info.map.getPlayerId()) && info.map.getTag().equals("bomb:explosed") && !isWaitEnemyBomb || PLAYER_ID.contains(info.map.getPlayerId()) && "player:stop-moving".equals(info.map.getTag()) && isWaitEnemyBomb == false ) {
                         try {
                             if (info.map.getTag().equals("start-game")) {
-                                if (info.map.getMapInfo().map.players.myArrayList.get(1).map.spawnBegin.map.col <= 14) {
+                                if (info.map.getMapInfo().map.players.myArrayList.get(PLAYER_ID.contains(PLAYER_1) ? 0 : 1).map.spawnBegin.map.col <= 14) {
                                     isStartFromLeft = true;
                                 }
-                                if (info.map.getMapInfo().map.players.myArrayList.get(1).map.spawnBegin.map.row <= 9) {
+                                if (info.map.getMapInfo().map.players.myArrayList.get(PLAYER_ID.contains(PLAYER_1) ? 0 : 1).map.spawnBegin.map.row <= 9) {
                                     isStartFromTop = true;
                                 }
                             }
@@ -258,8 +262,12 @@ public class PlayerMgr {
                                     moving = movingY;
                                 }
                                 if (loop == 4) {
-                                    isStartFromTop = !isStartFromTop;
-                                    isStartFromLeft = !isStartFromLeft;
+                                    if (moving.equals(movingX)) {
+                                        moving = movingY;
+                                    } else {
+                                        moving = movingX;
+                                    }
+                                    loop = 0;
                                 }
                             }
                         }
@@ -517,8 +525,7 @@ public class PlayerMgr {
                                 getEnviroment(currentPostion, info);
                             }
                         }
-                    }
-                    else {
+                    } else {
                         if (typeLeft == 0) {
                             try {
                                 //socket.emit(DRIVE_PLAYER, new JSONObject().put("direction", String.format("%d%d%d%d%d%d%d%d", i1,i2,i3,i4,i5,i6,i7,i8)));

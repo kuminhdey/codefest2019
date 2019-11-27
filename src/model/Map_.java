@@ -20,7 +20,7 @@ public class Map_ {
     public Players players;
     @SerializedName("gameStatus")
     @Expose
-    public GameStatus gameStatus;
+    public Object gameStatus;
     @SerializedName("bombs")
     @Expose
     public Bombs bombs;
