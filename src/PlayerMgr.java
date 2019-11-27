@@ -47,7 +47,7 @@ public class PlayerMgr {
 
     public static final String HOST = "https://codefest.techover.io";
 
-    public static final String GAME_ID = "9ff56130-4abf-4e43-9b02-c46895df955a";
+    public static final String GAME_ID = "770e5123-9393-447a-9ff2-68b2cca3b34f";
     public static final String PLAYER_ID = "player1-xxx";
     public static String PLAYER_1 = "";
     public static String PLAYER_2 = "";
@@ -85,6 +85,7 @@ public class PlayerMgr {
     private static String setupBom = "b";
     private static String stepBack = "";
     private static boolean isStartFromTop = false;
+    private static Integer enemy = 3;
 
     static class ProcessMapRunnable implements Runnable {
         Object param;
@@ -103,7 +104,7 @@ public class PlayerMgr {
     }
 
     private static boolean isBombSetup = false;
-    private static boolean isWaitBomb = false;
+    private static boolean isWaitBomb = true;
     private static int spoilsSize = 0;
     private static Map_____ oldPostion;
     static boolean isWaitEnemyBomb = false;
@@ -212,7 +213,7 @@ public class PlayerMgr {
 
                     }
 
-                    if (  info.map.getTag().equals("start-game") && !isWaitEnemyBomb || PLAYER_ID.contains(info.map.getPlayerId()) && info.map.getTag().equals("bomb:explosed") && !isWaitEnemyBomb || PLAYER_ID.contains(info.map.getPlayerId()) && "player:stop-moving".equals(info.map.getTag()) && isWaitEnemyBomb == false ) {
+                    if (info.map.getTag().equals("start-game") && !isWaitEnemyBomb || PLAYER_ID.contains(info.map.getPlayerId()) && info.map.getTag().equals("bomb:explosed") && !isWaitEnemyBomb || PLAYER_ID.contains(info.map.getPlayerId()) && "player:stop-moving".equals(info.map.getTag()) && isWaitEnemyBomb == false) {
                         try {
                             if (info.map.getTag().equals("start-game")) {
                                 if (info.map.getMapInfo().map.players.myArrayList.get(PLAYER_ID.contains(PLAYER_1) ? 0 : 1).map.spawnBegin.map.col <= 14) {
@@ -395,46 +396,47 @@ public class PlayerMgr {
                 isWaitBomb = true;
                 loop++;
             }
+
             boolean isEatStones = false;
             for (SpoilsList spoilsList : info.map.getMapInfo().map.spoils.myArrayList) {
                 if (info.map.getMapInfo().map.players.myArrayList.get(PLAYER_ID.contains(PLAYER_1) ? 0 : 1).map.speed >= 100) {
-                    if (spoilsList.map.row == currentPostion.row && spoilsList.map.col == currentPostion.col + 1 && !isBombSetup) {
+                    if (spoilsList.map.row == currentPostion.row && spoilsList.map.col == currentPostion.col + 1 && !isBombSetup && typeRight == 0) {
                         socket.emit(DRIVE_PLAYER, new JSONObject().put("direction", turnRight));
                         isEatStones = true;
                         break;
                     }
-                    if (spoilsList.map.row == currentPostion.row && spoilsList.map.col == currentPostion.col - 1 && !isBombSetup) {
+                    if (spoilsList.map.row == currentPostion.row && spoilsList.map.col == currentPostion.col - 1 && !isBombSetup && typeLeft == 0) {
                         socket.emit(DRIVE_PLAYER, new JSONObject().put("direction", turnLeft));
                         isEatStones = true;
                         break;
                     }
-                    if (spoilsList.map.row == currentPostion.row - 1 && spoilsList.map.col == currentPostion.col && !isBombSetup) {
+                    if (spoilsList.map.row == currentPostion.row - 1 && spoilsList.map.col == currentPostion.col && !isBombSetup && typeTop == 0) {
                         socket.emit(DRIVE_PLAYER, new JSONObject().put("direction", turnUp));
                         isEatStones = true;
                         break;
                     }
-                    if (spoilsList.map.row == currentPostion.row + 1 && spoilsList.map.col == currentPostion.col && !isBombSetup) {
+                    if (spoilsList.map.row == currentPostion.row + 1 && spoilsList.map.col == currentPostion.col && !isBombSetup && typeBottom == 0) {
                         socket.emit(DRIVE_PLAYER, new JSONObject().put("direction", turnDown));
                         isEatStones = true;
                         break;
                     }
                 } else {
-                    if (spoilsList.map.row == currentPostion.row && spoilsList.map.col == currentPostion.col + 1 && !isBombSetup && spoilsList.map.spoilType != MIND_STONE) {
+                    if (spoilsList.map.row == currentPostion.row && spoilsList.map.col == currentPostion.col + 1 && !isBombSetup && spoilsList.map.spoilType != MIND_STONE && typeRight == 0) {
                         socket.emit(DRIVE_PLAYER, new JSONObject().put("direction", turnRight));
                         isEatStones = true;
                         break;
                     }
-                    if (spoilsList.map.row == currentPostion.row && spoilsList.map.col == currentPostion.col - 1 && !isBombSetup && spoilsList.map.spoilType != MIND_STONE) {
+                    if (spoilsList.map.row == currentPostion.row && spoilsList.map.col == currentPostion.col - 1 && !isBombSetup && spoilsList.map.spoilType != MIND_STONE && typeLeft == 0) {
                         socket.emit(DRIVE_PLAYER, new JSONObject().put("direction", turnLeft));
                         isEatStones = true;
                         break;
                     }
-                    if (spoilsList.map.row == currentPostion.row - 1 && spoilsList.map.col == currentPostion.col && !isBombSetup && spoilsList.map.spoilType != MIND_STONE) {
+                    if (spoilsList.map.row == currentPostion.row - 1 && spoilsList.map.col == currentPostion.col && !isBombSetup && spoilsList.map.spoilType != MIND_STONE && typeTop == 0) {
                         socket.emit(DRIVE_PLAYER, new JSONObject().put("direction", turnUp));
                         isEatStones = true;
                         break;
                     }
-                    if (spoilsList.map.row == currentPostion.row + 1 && spoilsList.map.col == currentPostion.col && !isBombSetup && spoilsList.map.spoilType != MIND_STONE) {
+                    if (spoilsList.map.row == currentPostion.row + 1 && spoilsList.map.col == currentPostion.col && !isBombSetup && spoilsList.map.spoilType != MIND_STONE && typeBottom == 0) {
                         socket.emit(DRIVE_PLAYER, new JSONObject().put("direction", turnDown));
                         isEatStones = true;
                         break;
@@ -457,6 +459,88 @@ public class PlayerMgr {
 //                    }
 //                }
 //            }
+                boolean bombEnemy = false;
+                boolean isCleanLeft = true;
+                boolean isCleanTop = true;
+                boolean isCleanRight = true;
+                boolean isCleanBottom = true;
+                try {
+                    int size = info.map.getMapInfo().map.players.myArrayList.get(PLAYER_ID.contains(PLAYER_1) ? 0 : 1).map.power;
+                    for (int i = 0; i <= size; i++) {
+                        try {
+                            try {
+                                if (info.map.getMapInfo().map.map.myArrayList.get(currentPostion.row).myArrayList.get(currentPostion.col + i) == 1) {
+                                    isCleanRight = false;
+                                }
+                            } catch (Exception e) {
+
+                            }
+                            if (info.map.getMapInfo().map.map.myArrayList.get(currentPostion.row).myArrayList.get(currentPostion.col + i) == enemy && isCleanRight
+                                    || info.map.getMapInfo().map.map.myArrayList.get(currentPostion.row).myArrayList.get(currentPostion.col + i) == box && isCleanRight) {
+                                bombEnemy = true;
+                                break;
+                            }
+                        } catch (Exception e) {
+
+                        }
+
+                        try {
+                            if (info.map.getMapInfo().map.map.myArrayList.get(currentPostion.row).myArrayList.get(currentPostion.col - i) == 1) {
+                                isCleanLeft = false;
+                            }
+                        } catch (Exception e) {
+
+                        }
+
+                        try {
+                            if (info.map.getMapInfo().map.map.myArrayList.get(currentPostion.row).myArrayList.get(currentPostion.col - i) == enemy && isCleanLeft
+                                    || info.map.getMapInfo().map.map.myArrayList.get(currentPostion.row).myArrayList.get(currentPostion.col - i) == box && isCleanLeft) {
+                                bombEnemy = true;
+                                break;
+                            }
+                        } catch (Exception e) {
+
+                        }
+
+                        try {
+                            if (info.map.getMapInfo().map.map.myArrayList.get(currentPostion.row + i).myArrayList.get(currentPostion.col) == 1) {
+                                isCleanBottom = false;
+                            }
+                        } catch (Exception e) {
+
+                        }
+
+                        try {
+                            if (info.map.getMapInfo().map.map.myArrayList.get(currentPostion.row + i).myArrayList.get(currentPostion.col) == enemy && isCleanBottom
+                                    || info.map.getMapInfo().map.map.myArrayList.get(currentPostion.row + i).myArrayList.get(currentPostion.col) == box && isCleanBottom) {
+                                bombEnemy = true;
+                                break;
+                            }
+                        } catch (Exception e) {
+
+                        }
+
+                        try {
+                            if (info.map.getMapInfo().map.map.myArrayList.get(currentPostion.row - i).myArrayList.get(currentPostion.col) == 1) {
+                                isCleanTop = false;
+                            }
+                        } catch (Exception e) {
+
+                        }
+
+                        try {
+                            if (info.map.getMapInfo().map.map.myArrayList.get(currentPostion.row - i).myArrayList.get(currentPostion.col) == enemy && isCleanTop
+                                    || info.map.getMapInfo().map.map.myArrayList.get(currentPostion.row - i).myArrayList.get(currentPostion.col) == box && isCleanTop) {
+                                bombEnemy = true;
+                                break;
+                            }
+                        } catch (Exception e) {
+
+                        }
+                    }
+                } catch (Exception e) {
+                }
+
                 if (moving.equals(movingY)) {
 //                if(loopX >= 3){
 //                    isStartFromLeft = !isStartFromLeft;
@@ -466,7 +550,7 @@ public class PlayerMgr {
                         if (typeRight == 0) {
                             try {
                                 //socket.emit(DRIVE_PLAYER, new JSONObject().put("direction", String.format("%d%d%d%d%d%d%d%d", i1,i2,i3,i4,i5,i6,i7,i8)));
-                                if (typeLeft.equals(box) && !isBombSetup || typeTop.equals(box) && !isBombSetup || typeBottom.equals(box) && !isBombSetup) {
+                                if (typeLeft.equals(box) && !isBombSetup || typeTop.equals(box) && !isBombSetup || typeBottom.equals(box) && !isBombSetup || bombEnemy && !isBombSetup) {
                                     if (typeBottomRight == 0 || typeTopRight == 0) {
                                         socket.emit(DRIVE_PLAYER, new JSONObject().put("direction", setupBom + turnRight));
                                         oldPostion = currentPostion;
@@ -487,7 +571,6 @@ public class PlayerMgr {
                                         isWaitBomb = false;
                                     }
                                 }
-
                             } catch (JSONException e) {
                                 e.printStackTrace();
                             }
@@ -495,7 +578,7 @@ public class PlayerMgr {
                         } else if (typeLeft == 0) {
                             try {
                                 //socket.emit(DRIVE_PLAYER, new JSONObject().put("direction", String.format("%d%d%d%d%d%d%d%d", i1,i2,i3,i4,i5,i6,i7,i8)));
-                                if (typeRight.equals(box) && !isBombSetup || typeTop.equals(box) && !isBombSetup || typeBottom.equals(box) && !isBombSetup) {
+                                if (typeRight.equals(box) && !isBombSetup || typeTop.equals(box) && !isBombSetup || typeBottom.equals(box) && !isBombSetup || bombEnemy && !isBombSetup) {
                                     if (typeTopLeft == 0 || typeBottomLeft == 0) {
                                         socket.emit(DRIVE_PLAYER, new JSONObject().put("direction", setupBom + turnLeft));
                                         oldPostion = currentPostion;
@@ -529,7 +612,7 @@ public class PlayerMgr {
                         if (typeLeft == 0) {
                             try {
                                 //socket.emit(DRIVE_PLAYER, new JSONObject().put("direction", String.format("%d%d%d%d%d%d%d%d", i1,i2,i3,i4,i5,i6,i7,i8)));
-                                if (typeRight.equals(box) && !isBombSetup || typeTop.equals(box) && !isBombSetup || typeBottom.equals(box) && !isBombSetup) {
+                                if (typeRight.equals(box) && !isBombSetup || typeTop.equals(box) && !isBombSetup || typeBottom.equals(box) && !isBombSetup || bombEnemy && !isBombSetup) {
                                     if (typeTopLeft == 0 || typeBottomLeft == 0) {
                                         socket.emit(DRIVE_PLAYER, new JSONObject().put("direction", setupBom + turnLeft));
                                         oldPostion = currentPostion;
@@ -556,7 +639,7 @@ public class PlayerMgr {
                         } else if (typeRight == 0) {
                             try {
                                 //socket.emit(DRIVE_PLAYER, new JSONObject().put("direction", String.format("%d%d%d%d%d%d%d%d", i1,i2,i3,i4,i5,i6,i7,i8)));
-                                if (typeLeft.equals(box) && !isBombSetup || typeTop.equals(box) && !isBombSetup || typeBottom.equals(box) && !isBombSetup) {
+                                if (typeLeft.equals(box) && !isBombSetup || typeTop.equals(box) && !isBombSetup || typeBottom.equals(box) && !isBombSetup || bombEnemy && !isBombSetup) {
                                     if (typeBottomRight == 0 || typeTopRight == 0) {
                                         socket.emit(DRIVE_PLAYER, new JSONObject().put("direction", setupBom + turnRight));
                                         oldPostion = currentPostion;
@@ -595,7 +678,7 @@ public class PlayerMgr {
                         if (typeBottom == 0) {
                             try {
                                 //socket.emit(DRIVE_PLAYER, new JSONObject().put("direction", String.format("%d%d%d%d%d%d%d%d", i1,i2,i3,i4,i5,i6,i7,i8)));
-                                if (typeRight.equals(box) && !isBombSetup || typeTop.equals(box) && !isBombSetup || typeLeft.equals(box) && !isBombSetup) {
+                                if (typeRight.equals(box) && !isBombSetup || typeTop.equals(box) && !isBombSetup || typeLeft.equals(box) && !isBombSetup || bombEnemy && !isBombSetup) {
                                     if (typeBottomRight == 0 || typeBottomLeft == 0) {
                                         socket.emit(DRIVE_PLAYER, new JSONObject().put("direction", setupBom + turnDown));
                                         oldPostion = currentPostion;
@@ -621,7 +704,7 @@ public class PlayerMgr {
                         } else if (typeTop == 0) {
                             try {
                                 //socket.emit(DRIVE_PLAYER, new JSONObject().put("direction", String.format("%d%d%d%d%d%d%d%d", i1,i2,i3,i4,i5,i6,i7,i8)));
-                                if (typeRight.equals(box) && !isBombSetup || typeLeft.equals(box) && !isBombSetup || typeBottom.equals(box) && !isBombSetup) {
+                                if (typeRight.equals(box) && !isBombSetup || typeLeft.equals(box) && !isBombSetup || typeBottom.equals(box) && !isBombSetup || bombEnemy && !isBombSetup) {
                                     if (typeTopRight == 0 || typeTopLeft == 0) {
                                         socket.emit(DRIVE_PLAYER, new JSONObject().put("direction", setupBom + turnUp));
                                         oldPostion = currentPostion;
@@ -654,7 +737,7 @@ public class PlayerMgr {
                         if (typeTop == 0) {
                             try {
                                 //socket.emit(DRIVE_PLAYER, new JSONObject().put("direction", String.format("%d%d%d%d%d%d%d%d", i1,i2,i3,i4,i5,i6,i7,i8)));
-                                if (typeRight.equals(box) && !isBombSetup || typeLeft.equals(box) && !isBombSetup || typeBottom.equals(box) && !isBombSetup) {
+                                if (typeRight.equals(box) && !isBombSetup || typeLeft.equals(box) && !isBombSetup || typeBottom.equals(box) && !isBombSetup || bombEnemy && !isBombSetup) {
                                     if (typeTopRight == 0 || typeTopLeft == 0) {
                                         socket.emit(DRIVE_PLAYER, new JSONObject().put("direction", setupBom + turnUp));
                                         oldPostion = currentPostion;
@@ -680,7 +763,7 @@ public class PlayerMgr {
                         } else if (typeBottom == 0) {
                             try {
                                 //socket.emit(DRIVE_PLAYER, new JSONObject().put("direction", String.format("%d%d%d%d%d%d%d%d", i1,i2,i3,i4,i5,i6,i7,i8)));
-                                if (typeRight.equals(box) && !isBombSetup || typeTop.equals(box) && !isBombSetup || typeLeft.equals(box) && !isBombSetup) {
+                                if (typeRight.equals(box) && !isBombSetup || typeTop.equals(box) && !isBombSetup || typeLeft.equals(box) && !isBombSetup || bombEnemy && !isBombSetup) {
                                     if (typeBottomRight == 0 || typeBottomLeft == 0) {
                                         socket.emit(DRIVE_PLAYER, new JSONObject().put("direction", setupBom + turnDown));
                                         oldPostion = currentPostion;
@@ -721,8 +804,8 @@ public class PlayerMgr {
 
     private static Info setEnemyPostion(Info info) {
         try {
-            info.map.getMapInfo().map.map.myArrayList.get(info.map.getMapInfo().map.players.myArrayList.get(PLAYER_ID.contains(PLAYER_1) ? 1 : 0).map.currentPosition.map.row).myArrayList.set(info.map.getMapInfo().map.players.myArrayList.get(PLAYER_ID.contains(PLAYER_1) ? 1 : 0).map.currentPosition.map.col, box);
-            System.out.println("TICKTACK_Enemy" + gson.toJson(info));
+            info.map.getMapInfo().map.map.myArrayList.get(info.map.getMapInfo().map.players.myArrayList.get(PLAYER_ID.contains(PLAYER_1) ? 1 : 0).map.currentPosition.map.row).myArrayList.set(info.map.getMapInfo().map.players.myArrayList.get(PLAYER_ID.contains(PLAYER_1) ? 1 : 0).map.currentPosition.map.col, enemy);
+//            System.out.println("TICKTACK_Enemy" + gson.toJson(info));
         } catch (Exception e) {
             return info;
         }
@@ -764,8 +847,6 @@ public class PlayerMgr {
                     }
                 }
             }
-            Gson gson = new Gson();
-            System.out.println("TICKTACK_Bomb" + gson.toJson(info));
             return info;
         } catch (Exception e) {
             return info;
