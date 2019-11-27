@@ -47,7 +47,7 @@ public class PlayerMgr {
 
     public static final String HOST = "https://codefest.techover.io";
 
-    public static final String GAME_ID = "770e5123-9393-447a-9ff2-68b2cca3b34f";
+    public static final String GAME_ID = "827e74f1-8187-436e-a11e-6b8e35eb81ad";
     public static final String PLAYER_ID = "player1-xxx";
     public static String PLAYER_1 = "";
     public static String PLAYER_2 = "";
@@ -262,14 +262,14 @@ public class PlayerMgr {
                                 } else if (String.valueOf(info.map.getDirection().charAt(info.map.getDirection().length() - 1)).equals(turnUp) || String.valueOf(info.map.getDirection().charAt(info.map.getDirection().length() - 1)).equals(turnDown)) {
                                     moving = movingY;
                                 }
-                                if (loop == 4) {
-                                    if (moving.equals(movingX)) {
-                                        moving = movingY;
-                                    } else {
-                                        moving = movingX;
-                                    }
-                                    loop = 0;
-                                }
+//                                if (loop == 4) {
+//                                    if (moving.equals(movingX)) {
+//                                        moving = movingY;
+//                                    } else {
+//                                        moving = movingX;
+//                                    }
+//                                    loop = 0;
+//                                }
                             }
                         }
                     })/*
@@ -392,10 +392,10 @@ public class PlayerMgr {
             Integer typeTopRight = info.map.getMapInfo().map.map.myArrayList.get(currentPostion.row - 1).myArrayList.get(currentPostion.col + 1);
             Integer typeBottomRight = info.map.getMapInfo().map.map.myArrayList.get(currentPostion.row + 1).myArrayList.get(currentPostion.col + 1);
             Integer typeBottom = info.map.getMapInfo().map.map.myArrayList.get(currentPostion.row + 1).myArrayList.get(currentPostion.col);
-            if (!typeRight.equals(box) && !typeTop.equals(box) && !typeBottom.equals(box) && !typeLeft.equals(box) && !isBombSetup) {
-                isWaitBomb = true;
-                loop++;
-            }
+//            if (!typeRight.equals(box) && !typeTop.equals(box) && !typeBottom.equals(box) && !typeLeft.equals(box) && !isBombSetup) {
+//                isWaitBomb = true;
+//                loop++;
+//            }
 
             boolean isEatStones = false;
             for (SpoilsList spoilsList : info.map.getMapInfo().map.spoils.myArrayList) {
