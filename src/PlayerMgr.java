@@ -45,9 +45,9 @@ public class PlayerMgr {
 
     public static final String DRIVE_ELEPHANT_STATE = "player drive elephant state";
 
-    public static final String HOST = "https://codefest.techover.io";
+    public static final String HOST = "http://10.17.74.92";
 
-    public static final String GAME_ID = "827e74f1-8187-436e-a11e-6b8e35eb81ad";
+    public static final String GAME_ID = "c0d52bec-9173-49d0-8609-ad9c514ea3ae";
     public static final String PLAYER_ID = "player1-xxx";
     public static String PLAYER_1 = "";
     public static String PLAYER_2 = "";
@@ -154,98 +154,89 @@ public class PlayerMgr {
                     preProcess = new ProcessMapRunnable(args[0]);
                     // long start = System.currentTimeMillis();
                     executorService.execute(preProcess);
+                    try {
+                        Thread.sleep(100);
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
                     Info info = gson.fromJson(gson.toJson(args[0]), Info.class);
-                    setPlayer(info);
-                    info = setEnemyPostion(info);
-                    info = setBombPosition(info);
-//                    try {
-//                        Map_____ currentPostion = getCurrentPostion(info);
-//                        Integer typeLeft = info.map.getMapInfo().map.map.myArrayList.get(currentPostion.row).myArrayList.get(currentPostion.col - 1);
-//                        Integer typeRight = info.map.getMapInfo().map.map.myArrayList.get(currentPostion.row).myArrayList.get(currentPostion.col + 1);
-//                        Integer typeTop = info.map.getMapInfo().map.map.myArrayList.get(currentPostion.row - 1).myArrayList.get(currentPostion.col);
-//                        Integer typeBottom = info.map.getMapInfo().map.map.myArrayList.get(currentPostion.row + 1).myArrayList.get(currentPostion.col);
-//                        for (BoomsMap booms : info.map.getMapInfo().map.bombs.myArrayList) {
-//                            if (booms.map.getRow() == currentPostion.row - 1 && !booms.map.getPlayerId().equals(PLAYER_ID)
-//                                    || booms.map.getRow() == currentPostion.row + 1 && !booms.map.getPlayerId().equals(PLAYER_ID)
-//                                    || booms.map.getCol() == currentPostion.col - 1 && !booms.map.getPlayerId().equals(PLAYER_ID)
-//                                    || booms.map.getCol() == currentPostion.col + 1 && !booms.map.getPlayerId().equals(PLAYER_ID)) {
-//                                isWaitEnemyBomb = true;
-//                                break;
-//                            }
-//                            if (booms.map.getCol() == currentPostion.col && !booms.map.getPlayerId().equals(PLAYER_ID)) {
-//                                if (typeLeft == 0) {
-//                                    socket.emit(DRIVE_PLAYER, new JSONObject().put("direction", turnLeft));
-//                                    isWaitEnemyBomb = true;
-//                                    break;
-//                                } else if (typeRight == 0) {
-//                                    socket.emit(DRIVE_PLAYER, new JSONObject().put("direction", turnRight));
-//                                    isWaitEnemyBomb = true;
-//                                    break;
-//                                }
-//                                if (booms.map.getRow() == currentPostion.row && !booms.map.getPlayerId().equals(PLAYER_ID)) {
-//                                    if (typeTop == 0) {
-//                                        socket.emit(DRIVE_PLAYER, new JSONObject().put("direction", turnUp));
-//                                        isWaitEnemyBomb = true;
-//                                        break;
-//                                    } else if (typeBottom == 0) {
-//                                        socket.emit(DRIVE_PLAYER, new JSONObject().put("direction", turnDown));
-//                                        isWaitEnemyBomb = true;
-//                                        break;
+                    try {
+                        info.map.getMapInfo().map.map.myArrayList.get(info.map.getMapInfo().map.players.myArrayList.get(PLAYER_ID.contains(PLAYER_1) ? 1 : 0).map.currentPosition.map.row).myArrayList.set(info.map.getMapInfo().map.players.myArrayList.get(PLAYER_ID.contains(PLAYER_1) ? 1 : 0).map.currentPosition.map.col, enemy);
+//            System.out.println("TICKTACK_Enemy" + gson.toJson(info));
+                    } catch (Exception e) {
+                    }
+                    try {
+//            Integer size1 = info.map.getMapInfo().map.players.myArrayList.get(0).map.power;
+                        Integer size = info.map.getMapInfo().map.players.myArrayList.get(0).map.power;
+                        for (BoomsMap booms : info.map.getMapInfo().map.bombs.myArrayList) {
+                            if (size != null) {
+//                                for (int i = 0; i <= size; i++) {
+//                                    try {
+//                                        if (info.map.getMapInfo().map.map.myArrayList.get(booms.map.getRow()).myArrayList.get(booms.map.getCol() + i) == 0) {
+//                                            info.map.getMapInfo().map.map.myArrayList.get(booms.map.getRow()).myArrayList.set(booms.map.getCol() + i, 1);
+//                                        }
+//                                    } catch (Exception e) {
+//
+//                                    }
+//                                    try {
+//                                        if (info.map.getMapInfo().map.map.myArrayList.get(booms.map.getRow()).myArrayList.get(booms.map.getCol() - i) == 0) {
+//                                            info.map.getMapInfo().map.map.myArrayList.get(booms.map.getRow()).myArrayList.set(booms.map.getCol() - i, 1);
+//                                        }
+//                                    } catch (Exception e) {
+//
+//                                    }
+//                                    try {
+//                                        if (info.map.getMapInfo().map.map.myArrayList.get(booms.map.getRow() + i).myArrayList.get(booms.map.getCol()) == 0) {
+//                                            info.map.getMapInfo().map.map.myArrayList.get(booms.map.getRow() + i).myArrayList.set(booms.map.getCol(), 1);
+//                                        }
+//                                    } catch (Exception e) {
+//
+//                                    }
+//                                    try {
+//                                        if (info.map.getMapInfo().map.map.myArrayList.get(booms.map.getRow() - i).myArrayList.get(booms.map.getCol()) == 0) {
+//                                            info.map.getMapInfo().map.map.myArrayList.get(booms.map.getRow() - i).myArrayList.set(booms.map.getCol(), 1);
+//                                        }
+//                                    } catch (Exception e) {
+//
 //                                    }
 //                                }
-//                            }
-//                        }
-//                    } catch (Exception e) {
-//                    }
-//                    if (!PLAYER_ID.equals(info.map.getPlayerId()) && info.map.getTag().equals("bomb:explosed") && isWaitEnemyBomb) {
-//                        info.map.setTag("start-game");
-//                        isWaitEnemyBomb = false;
-//                    }
+                            }
+                        }
+                    } catch (Exception e) {
+                    }
+
+
                     try {
-                        if (PLAYER_ID.contains(info.map.getPlayerId()) && info.map.getTag().equals("bomb:setup")) {
-                            isBombSetup = true;
-                        } else if (PLAYER_ID.contains(info.map.getPlayerId()) && info.map.getTag().equals("bomb:explosed")) {
-                            isBombSetup = false;
-                            isWaitBomb = true;
-//                        isMoveBack = test(oldPostion, info);
+                        if (info.map.getTag().equals("start-game")) {
+                            if (info.map.getMapInfo().map.players.myArrayList.get(PLAYER_ID.contains(PLAYER_1) ? 0 : 1).map.spawnBegin.map.col <= 14) {
+                                isStartFromLeft = true;
+                            }
+                            if (info.map.getMapInfo().map.players.myArrayList.get(PLAYER_ID.contains(PLAYER_1) ? 0 : 1).map.spawnBegin.map.row <= 9) {
+                                isStartFromTop = true;
+                            }
+                        }
+
+                        if (info.map.getMapInfo().map.players.myArrayList.get(PLAYER_ID.contains(PLAYER_1) ? 0 : 1).map.currentPosition.map.col == 1 && info.map.getMapInfo().map.players.myArrayList.get(PLAYER_ID.contains(PLAYER_1) ? 0 : 1).map.currentPosition.map.row == 1 || info.map.getMapInfo().map.players.myArrayList.get(PLAYER_ID.contains(PLAYER_1) ? 0 : 1).map.currentPosition.map.col == 1 && info.map.getMapInfo().map.players.myArrayList.get(PLAYER_ID.contains(PLAYER_1) ? 0 : 1).map.currentPosition.map.row == 16) {
+                            isStartFromLeft = true;
+                            if (info.map.getMapInfo().map.players.myArrayList.get(PLAYER_ID.contains(PLAYER_1) ? 0 : 1).map.currentPosition.map.row == 1) {
+                                isStartFromTop = true;
+                            }
+                            if (info.map.getMapInfo().map.players.myArrayList.get(PLAYER_ID.contains(PLAYER_1) ? 0 : 1).map.currentPosition.map.row == 16) {
+                                isStartFromTop = false;
+                            }
+                        } else if (info.map.getMapInfo().map.players.myArrayList.get(PLAYER_ID.contains(PLAYER_1) ? 0 : 1).map.currentPosition.map.col == 26 && info.map.getMapInfo().map.players.myArrayList.get(PLAYER_ID.contains(PLAYER_1) ? 0 : 1).map.currentPosition.map.row == 1 || info.map.getMapInfo().map.players.myArrayList.get(PLAYER_ID.contains(PLAYER_1) ? 0 : 1).map.currentPosition.map.col == 26 && info.map.getMapInfo().map.players.myArrayList.get(PLAYER_ID.contains(PLAYER_1) ? 0 : 1).map.currentPosition.map.row == 16) {
+                            isStartFromLeft = false;
+                            if (info.map.getMapInfo().map.players.myArrayList.get(PLAYER_ID.contains(PLAYER_1) ? 0 : 1).map.currentPosition.map.row == 1) {
+                                isStartFromTop = true;
+                            }
+                            if (info.map.getMapInfo().map.players.myArrayList.get(PLAYER_ID.contains(PLAYER_1) ? 0 : 1).map.currentPosition.map.row == 16) {
+                                isStartFromTop = false;
+                            }
                         }
                     } catch (Exception e) {
 
                     }
-
-                    if (info.map.getTag().equals("start-game") && !isWaitEnemyBomb || PLAYER_ID.contains(info.map.getPlayerId()) && info.map.getTag().equals("bomb:explosed") && !isWaitEnemyBomb || PLAYER_ID.contains(info.map.getPlayerId()) && "player:stop-moving".equals(info.map.getTag()) && isWaitEnemyBomb == false) {
-                        try {
-                            if (info.map.getTag().equals("start-game")) {
-                                if (info.map.getMapInfo().map.players.myArrayList.get(PLAYER_ID.contains(PLAYER_1) ? 0 : 1).map.spawnBegin.map.col <= 14) {
-                                    isStartFromLeft = true;
-                                }
-                                if (info.map.getMapInfo().map.players.myArrayList.get(PLAYER_ID.contains(PLAYER_1) ? 0 : 1).map.spawnBegin.map.row <= 9) {
-                                    isStartFromTop = true;
-                                }
-                            }
-
-                            if (info.map.getMapInfo().map.players.myArrayList.get(PLAYER_ID.contains(PLAYER_1) ? 0 : 1).map.currentPosition.map.col == 1 && info.map.getMapInfo().map.players.myArrayList.get(PLAYER_ID.contains(PLAYER_1) ? 0 : 1).map.currentPosition.map.row == 1 || info.map.getMapInfo().map.players.myArrayList.get(PLAYER_ID.contains(PLAYER_1) ? 0 : 1).map.currentPosition.map.col == 1 && info.map.getMapInfo().map.players.myArrayList.get(PLAYER_ID.contains(PLAYER_1) ? 0 : 1).map.currentPosition.map.row == 16) {
-                                isStartFromLeft = true;
-                                if (info.map.getMapInfo().map.players.myArrayList.get(PLAYER_ID.contains(PLAYER_1) ? 0 : 1).map.currentPosition.map.row == 1) {
-                                    isStartFromTop = true;
-                                }
-                                if (info.map.getMapInfo().map.players.myArrayList.get(PLAYER_ID.contains(PLAYER_1) ? 0 : 1).map.currentPosition.map.row == 16) {
-                                    isStartFromTop = false;
-                                }
-                            } else if (info.map.getMapInfo().map.players.myArrayList.get(PLAYER_ID.contains(PLAYER_1) ? 0 : 1).map.currentPosition.map.col == 26 && info.map.getMapInfo().map.players.myArrayList.get(PLAYER_ID.contains(PLAYER_1) ? 0 : 1).map.currentPosition.map.row == 1 || info.map.getMapInfo().map.players.myArrayList.get(PLAYER_ID.contains(PLAYER_1) ? 0 : 1).map.currentPosition.map.col == 26 && info.map.getMapInfo().map.players.myArrayList.get(PLAYER_ID.contains(PLAYER_1) ? 0 : 1).map.currentPosition.map.row == 16) {
-                                isStartFromLeft = false;
-                                if (info.map.getMapInfo().map.players.myArrayList.get(PLAYER_ID.contains(PLAYER_1) ? 0 : 1).map.currentPosition.map.row == 1) {
-                                    isStartFromTop = true;
-                                }
-                                if (info.map.getMapInfo().map.players.myArrayList.get(PLAYER_ID.contains(PLAYER_1) ? 0 : 1).map.currentPosition.map.row == 16) {
-                                    isStartFromTop = false;
-                                }
-                            }
-                        } catch (Exception e) {
-
-                        }
-                        getEnviroment(getCurrentPostion(info), info);
-                    }
+                    getEnviroment(getCurrentPostion(info), info);
                 }
 //				randomDirection();
 
@@ -262,14 +253,14 @@ public class PlayerMgr {
                                 } else if (String.valueOf(info.map.getDirection().charAt(info.map.getDirection().length() - 1)).equals(turnUp) || String.valueOf(info.map.getDirection().charAt(info.map.getDirection().length() - 1)).equals(turnDown)) {
                                     moving = movingY;
                                 }
-//                                if (loop == 4) {
-//                                    if (moving.equals(movingX)) {
-//                                        moving = movingY;
-//                                    } else {
-//                                        moving = movingX;
-//                                    }
-//                                    loop = 0;
-//                                }
+                                if (loop == 4) {
+                                    if (moving.equals(movingX)) {
+                                        moving = movingY;
+                                    } else {
+                                        moving = movingX;
+                                    }
+                                    loop = 0;
+                                }
                             }
                         }
                     })/*
@@ -541,253 +532,232 @@ public class PlayerMgr {
                 } catch (Exception e) {
                 }
 
-                if (moving.equals(movingY)) {
+
+
 //                if(loopX >= 3){
 //                    isStartFromLeft = !isStartFromLeft;
 //                    loopX = 0;
 //                }
-                    if (isStartFromLeft ? n != 0 : n == 0) {
-                        if (typeRight == 0) {
-                            try {
-                                //socket.emit(DRIVE_PLAYER, new JSONObject().put("direction", String.format("%d%d%d%d%d%d%d%d", i1,i2,i3,i4,i5,i6,i7,i8)));
-                                if (typeLeft.equals(box) && !isBombSetup || typeTop.equals(box) && !isBombSetup || typeBottom.equals(box) && !isBombSetup || bombEnemy && !isBombSetup) {
-                                    if (typeBottomRight == 0 || typeTopRight == 0) {
-                                        socket.emit(DRIVE_PLAYER, new JSONObject().put("direction", setupBom + turnRight));
-                                        oldPostion = currentPostion;
-                                        stepBack = turnLeft;
-                                        isBombSetup = true;
-                                        isWaitBomb = true;
-                                    } else {
-                                        socket.emit(DRIVE_PLAYER, new JSONObject().put("direction", turnRight));
-                                        loopX++;
-                                    }
+                if (isStartFromLeft ? n != 0 : n == 0) {
+                    if (typeRight == 0) {
+                        try {
+                            //socket.emit(DRIVE_PLAYER, new JSONObject().put("direction", String.format("%d%d%d%d%d%d%d%d", i1,i2,i3,i4,i5,i6,i7,i8)));
+                            if (bombEnemy) {
+                                if (typeBottomRight == 0 || typeTopRight == 0) {
+                                    socket.emit(DRIVE_PLAYER, new JSONObject().put("direction", setupBom + turnRight));
                                 } else {
-                                    if (isWaitBomb) {
-                                        socket.emit(DRIVE_PLAYER, new JSONObject().put("direction", turnRight));
-                                        loopX++;
-                                        if (isBombSetup) {
-                                            stepBack = stepBack + turnLeft;
-                                        }
-                                        isWaitBomb = false;
-                                    }
+                                    socket.emit(DRIVE_PLAYER, new JSONObject().put("direction", turnRight));
                                 }
-                            } catch (JSONException e) {
-                                e.printStackTrace();
+                            } else {
+                                socket.emit(DRIVE_PLAYER, new JSONObject().put("direction", turnRight));
                             }
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
 
-                        } else if (typeLeft == 0) {
-                            try {
-                                //socket.emit(DRIVE_PLAYER, new JSONObject().put("direction", String.format("%d%d%d%d%d%d%d%d", i1,i2,i3,i4,i5,i6,i7,i8)));
-                                if (typeRight.equals(box) && !isBombSetup || typeTop.equals(box) && !isBombSetup || typeBottom.equals(box) && !isBombSetup || bombEnemy && !isBombSetup) {
-                                    if (typeTopLeft == 0 || typeBottomLeft == 0) {
-                                        socket.emit(DRIVE_PLAYER, new JSONObject().put("direction", setupBom + turnLeft));
-                                        oldPostion = currentPostion;
-                                        stepBack = turnLeft;
-                                        isBombSetup = true;
-                                        isWaitBomb = true;
-                                    } else {
-                                        socket.emit(DRIVE_PLAYER, new JSONObject().put("direction", turnLeft));
-                                        loopX++;
-                                    }
+                    } else if (typeLeft == 0) {
+                        try {
+                            //socket.emit(DRIVE_PLAYER, new JSONObject().put("direction", String.format("%d%d%d%d%d%d%d%d", i1,i2,i3,i4,i5,i6,i7,i8)));
+                            if (bombEnemy) {
+                                if (typeTopLeft == 0 || typeBottomLeft == 0) {
+                                    socket.emit(DRIVE_PLAYER, new JSONObject().put("direction", setupBom + turnLeft));
                                 } else {
-                                    if (isWaitBomb) {
-                                        socket.emit(DRIVE_PLAYER, new JSONObject().put("direction", turnLeft));
-                                        loopX++;
-                                        if (isBombSetup) {
-                                            stepBack = stepBack + turnRight;
-                                        }
-                                        isWaitBomb = false;
-                                    }
+                                    socket.emit(DRIVE_PLAYER, new JSONObject().put("direction", turnLeft));
                                 }
-                            } catch (JSONException e) {
-                                e.printStackTrace();
+                            } else {
+                                socket.emit(DRIVE_PLAYER, new JSONObject().put("direction", turnLeft));
                             }
-                        } else {
-                            if (!isBombSetup) {
-                                moving = movingX;
-                                getEnviroment(currentPostion, info);
-                            }
+                        } catch (JSONException e) {
+                            e.printStackTrace();
                         }
                     } else {
-                        if (typeLeft == 0) {
-                            try {
-                                //socket.emit(DRIVE_PLAYER, new JSONObject().put("direction", String.format("%d%d%d%d%d%d%d%d", i1,i2,i3,i4,i5,i6,i7,i8)));
-                                if (typeRight.equals(box) && !isBombSetup || typeTop.equals(box) && !isBombSetup || typeBottom.equals(box) && !isBombSetup || bombEnemy && !isBombSetup) {
-                                    if (typeTopLeft == 0 || typeBottomLeft == 0) {
-                                        socket.emit(DRIVE_PLAYER, new JSONObject().put("direction", setupBom + turnLeft));
-                                        oldPostion = currentPostion;
-                                        stepBack = turnLeft;
-                                        isBombSetup = true;
-                                        isWaitBomb = true;
-                                    } else {
-                                        socket.emit(DRIVE_PLAYER, new JSONObject().put("direction", turnLeft));
-                                        loopX++;
-                                    }
-                                } else {
-                                    if (isWaitBomb) {
-                                        socket.emit(DRIVE_PLAYER, new JSONObject().put("direction", turnLeft));
-                                        loopX++;
-                                        if (isBombSetup) {
-                                            stepBack = stepBack + turnRight;
+                        if (isStartFromTop ? n != 0 : n == 0) {
+                            if (typeBottom == 0) {
+                                try {
+                                    //socket.emit(DRIVE_PLAYER, new JSONObject().put("direction", String.format("%d%d%d%d%d%d%d%d", i1,i2,i3,i4,i5,i6,i7,i8)));
+                                    if (bombEnemy) {
+                                        if (typeBottomRight == 0 || typeBottomLeft == 0) {
+                                            socket.emit(DRIVE_PLAYER, new JSONObject().put("direction", setupBom + turnDown));
+                                        } else {
+                                            socket.emit(DRIVE_PLAYER, new JSONObject().put("direction", turnDown));
                                         }
-                                        isWaitBomb = false;
-                                    }
-                                }
-                            } catch (JSONException e) {
-                                e.printStackTrace();
-                            }
-                        } else if (typeRight == 0) {
-                            try {
-                                //socket.emit(DRIVE_PLAYER, new JSONObject().put("direction", String.format("%d%d%d%d%d%d%d%d", i1,i2,i3,i4,i5,i6,i7,i8)));
-                                if (typeLeft.equals(box) && !isBombSetup || typeTop.equals(box) && !isBombSetup || typeBottom.equals(box) && !isBombSetup || bombEnemy && !isBombSetup) {
-                                    if (typeBottomRight == 0 || typeTopRight == 0) {
-                                        socket.emit(DRIVE_PLAYER, new JSONObject().put("direction", setupBom + turnRight));
-                                        oldPostion = currentPostion;
-                                        stepBack = turnLeft;
-                                        isBombSetup = true;
-                                        isWaitBomb = true;
                                     } else {
-                                        socket.emit(DRIVE_PLAYER, new JSONObject().put("direction", turnRight));
-                                        loopX++;
+                                        socket.emit(DRIVE_PLAYER, new JSONObject().put("direction", turnDown));
                                     }
-                                } else {
-                                    if (isWaitBomb) {
-                                        socket.emit(DRIVE_PLAYER, new JSONObject().put("direction", turnRight));
-                                        loopX++;
-                                        if (isBombSetup) {
-                                            stepBack = stepBack + turnLeft;
-                                        }
-                                        isWaitBomb = false;
-                                    }
+                                } catch (JSONException e) {
+                                    e.printStackTrace();
                                 }
+                            } else if (typeTop == 0) {
+                                try {
+                                    //socket.emit(DRIVE_PLAYER, new JSONObject().put("direction", String.format("%d%d%d%d%d%d%d%d", i1,i2,i3,i4,i5,i6,i7,i8)));
+                                    if (bombEnemy) {
+                                        if (typeTopRight == 0 || typeTopLeft == 0) {
+                                            socket.emit(DRIVE_PLAYER, new JSONObject().put("direction", setupBom + turnUp));
+                                        } else {
+                                            socket.emit(DRIVE_PLAYER, new JSONObject().put("direction", turnUp));
+                                        }
+                                    } else {
 
-                            } catch (JSONException e) {
-                                e.printStackTrace();
-                            }
+                                        socket.emit(DRIVE_PLAYER, new JSONObject().put("direction", turnUp));
 
-                        } else {
-                            if (!isBombSetup) {
-                                moving = movingX;
+                                    }
+
+                                } catch (JSONException e) {
+                                    e.printStackTrace();
+                                }
+                            } else {
+                                Thread.sleep(100);
+                                moving = movingY;
                                 getEnviroment(currentPostion, info);
                             }
-                        }
-                    }
-
-                } else if (moving.equals(movingX)) {
-                    if (isStartFromTop ? n != 0 : n == 0) {
-                        if (typeBottom == 0) {
-                            try {
-                                //socket.emit(DRIVE_PLAYER, new JSONObject().put("direction", String.format("%d%d%d%d%d%d%d%d", i1,i2,i3,i4,i5,i6,i7,i8)));
-                                if (typeRight.equals(box) && !isBombSetup || typeTop.equals(box) && !isBombSetup || typeLeft.equals(box) && !isBombSetup || bombEnemy && !isBombSetup) {
-                                    if (typeBottomRight == 0 || typeBottomLeft == 0) {
-                                        socket.emit(DRIVE_PLAYER, new JSONObject().put("direction", setupBom + turnDown));
-                                        oldPostion = currentPostion;
-                                        stepBack = turnLeft;
-                                        isBombSetup = true;
-                                        isWaitBomb = true;
-                                    } else {
-                                        socket.emit(DRIVE_PLAYER, new JSONObject().put("direction", turnDown));
-                                    }
-                                } else {
-                                    if (isWaitBomb) {
-                                        socket.emit(DRIVE_PLAYER, new JSONObject().put("direction", turnDown));
-                                        if (isBombSetup) {
-                                            stepBack = stepBack + turnUp;
-                                        }
-                                        isWaitBomb = false;
-                                    }
-                                }
-
-                            } catch (JSONException e) {
-                                e.printStackTrace();
-                            }
-                        } else if (typeTop == 0) {
-                            try {
-                                //socket.emit(DRIVE_PLAYER, new JSONObject().put("direction", String.format("%d%d%d%d%d%d%d%d", i1,i2,i3,i4,i5,i6,i7,i8)));
-                                if (typeRight.equals(box) && !isBombSetup || typeLeft.equals(box) && !isBombSetup || typeBottom.equals(box) && !isBombSetup || bombEnemy && !isBombSetup) {
-                                    if (typeTopRight == 0 || typeTopLeft == 0) {
-                                        socket.emit(DRIVE_PLAYER, new JSONObject().put("direction", setupBom + turnUp));
-                                        oldPostion = currentPostion;
-                                        stepBack = turnLeft;
-                                        isBombSetup = true;
-                                        isWaitBomb = true;
-                                    } else {
-                                        socket.emit(DRIVE_PLAYER, new JSONObject().put("direction", turnUp));
-                                    }
-                                } else {
-                                    if (isWaitBomb) {
-                                        socket.emit(DRIVE_PLAYER, new JSONObject().put("direction", turnUp));
-                                        if (isBombSetup) {
-                                            stepBack = stepBack + turnDown;
-                                        }
-                                        isWaitBomb = false;
-                                    }
-                                }
-
-                            } catch (JSONException e) {
-                                e.printStackTrace();
-                            }
                         } else {
-                            if (!isBombSetup) {
+                            if (typeTop == 0) {
+                                try {
+                                    //socket.emit(DRIVE_PLAYER, new JSONObject().put("direction", String.format("%d%d%d%d%d%d%d%d", i1,i2,i3,i4,i5,i6,i7,i8)));
+                                    if (bombEnemy) {
+                                        if (typeTopRight == 0 || typeTopLeft == 0) {
+                                            socket.emit(DRIVE_PLAYER, new JSONObject().put("direction", setupBom + turnUp));
+                                        } else {
+                                            socket.emit(DRIVE_PLAYER, new JSONObject().put("direction", turnUp));
+                                        }
+                                    } else {
+                                        socket.emit(DRIVE_PLAYER, new JSONObject().put("direction", turnUp));
+
+                                    }
+                                } catch (JSONException e) {
+                                    e.printStackTrace();
+                                }
+                            } else if (typeBottom == 0) {
+                                try {
+                                    //socket.emit(DRIVE_PLAYER, new JSONObject().put("direction", String.format("%d%d%d%d%d%d%d%d", i1,i2,i3,i4,i5,i6,i7,i8)));
+                                    if (bombEnemy) {
+                                        if (typeBottomRight == 0 || typeBottomLeft == 0) {
+                                            socket.emit(DRIVE_PLAYER, new JSONObject().put("direction", setupBom + turnDown));
+                                        } else {
+                                            socket.emit(DRIVE_PLAYER, new JSONObject().put("direction", turnDown));
+                                        }
+                                    } else {
+                                        socket.emit(DRIVE_PLAYER, new JSONObject().put("direction", turnDown));
+                                    }
+
+                                } catch (JSONException e) {
+                                    e.printStackTrace();
+                                }
+                            } else {
+                                Thread.sleep(300);
                                 moving = movingY;
                                 getEnviroment(currentPostion, info);
                             }
                         }
-                    } else {
-                        if (typeTop == 0) {
-                            try {
-                                //socket.emit(DRIVE_PLAYER, new JSONObject().put("direction", String.format("%d%d%d%d%d%d%d%d", i1,i2,i3,i4,i5,i6,i7,i8)));
-                                if (typeRight.equals(box) && !isBombSetup || typeLeft.equals(box) && !isBombSetup || typeBottom.equals(box) && !isBombSetup || bombEnemy && !isBombSetup) {
-                                    if (typeTopRight == 0 || typeTopLeft == 0) {
-                                        socket.emit(DRIVE_PLAYER, new JSONObject().put("direction", setupBom + turnUp));
-                                        oldPostion = currentPostion;
-                                        stepBack = turnLeft;
-                                        isBombSetup = true;
-                                        isWaitBomb = true;
-                                    } else {
-                                        socket.emit(DRIVE_PLAYER, new JSONObject().put("direction", turnUp));
-                                    }
+                    }
+                } else {
+                    if (typeLeft == 0) {
+                        try {
+                            //socket.emit(DRIVE_PLAYER, new JSONObject().put("direction", String.format("%d%d%d%d%d%d%d%d", i1,i2,i3,i4,i5,i6,i7,i8)));
+                            if (bombEnemy) {
+                                if (typeTopLeft == 0 || typeBottomLeft == 0) {
+                                    socket.emit(DRIVE_PLAYER, new JSONObject().put("direction", setupBom + turnLeft));
                                 } else {
-                                    if (isWaitBomb) {
-                                        socket.emit(DRIVE_PLAYER, new JSONObject().put("direction", turnUp));
-                                        if (isBombSetup) {
-                                            stepBack = stepBack + turnDown;
-                                        }
-                                        isWaitBomb = false;
-                                    }
+                                    socket.emit(DRIVE_PLAYER, new JSONObject().put("direction", turnLeft));
                                 }
-
-                            } catch (JSONException e) {
-                                e.printStackTrace();
+                            } else {
+                                socket.emit(DRIVE_PLAYER, new JSONObject().put("direction", turnLeft));
                             }
-                        } else if (typeBottom == 0) {
-                            try {
-                                //socket.emit(DRIVE_PLAYER, new JSONObject().put("direction", String.format("%d%d%d%d%d%d%d%d", i1,i2,i3,i4,i5,i6,i7,i8)));
-                                if (typeRight.equals(box) && !isBombSetup || typeTop.equals(box) && !isBombSetup || typeLeft.equals(box) && !isBombSetup || bombEnemy && !isBombSetup) {
-                                    if (typeBottomRight == 0 || typeBottomLeft == 0) {
-                                        socket.emit(DRIVE_PLAYER, new JSONObject().put("direction", setupBom + turnDown));
-                                        oldPostion = currentPostion;
-                                        stepBack = turnLeft;
-                                        isBombSetup = true;
-                                        isWaitBomb = true;
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
+                    } else if (typeRight == 0) {
+                        try {
+                            //socket.emit(DRIVE_PLAYER, new JSONObject().put("direction", String.format("%d%d%d%d%d%d%d%d", i1,i2,i3,i4,i5,i6,i7,i8)));
+                            if (bombEnemy) {
+                                if (typeBottomRight == 0 || typeTopRight == 0) {
+                                    socket.emit(DRIVE_PLAYER, new JSONObject().put("direction", setupBom + turnRight));
+                                } else {
+                                    socket.emit(DRIVE_PLAYER, new JSONObject().put("direction", turnRight));
+                                }
+                            } else {
+                                socket.emit(DRIVE_PLAYER, new JSONObject().put("direction", turnRight));
+                            }
+
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
+
+                    } else {
+                        if (isStartFromTop ? n != 0 : n == 0) {
+                            if (typeBottom == 0) {
+                                try {
+                                    //socket.emit(DRIVE_PLAYER, new JSONObject().put("direction", String.format("%d%d%d%d%d%d%d%d", i1,i2,i3,i4,i5,i6,i7,i8)));
+                                    if (bombEnemy) {
+                                        if (typeBottomRight == 0 || typeBottomLeft == 0) {
+                                            socket.emit(DRIVE_PLAYER, new JSONObject().put("direction", setupBom + turnDown));
+                                        } else {
+                                            socket.emit(DRIVE_PLAYER, new JSONObject().put("direction", turnDown));
+                                        }
                                     } else {
                                         socket.emit(DRIVE_PLAYER, new JSONObject().put("direction", turnDown));
                                     }
-                                } else {
-                                    if (isWaitBomb) {
-                                        socket.emit(DRIVE_PLAYER, new JSONObject().put("direction", turnDown));
-                                        if (isBombSetup) {
-                                            stepBack = stepBack + turnUp;
-                                        }
-                                        isWaitBomb = false;
-                                    }
+                                } catch (JSONException e) {
+                                    e.printStackTrace();
                                 }
+                            } else if (typeTop == 0) {
+                                try {
+                                    //socket.emit(DRIVE_PLAYER, new JSONObject().put("direction", String.format("%d%d%d%d%d%d%d%d", i1,i2,i3,i4,i5,i6,i7,i8)));
+                                    if (bombEnemy) {
+                                        if (typeTopRight == 0 || typeTopLeft == 0) {
+                                            socket.emit(DRIVE_PLAYER, new JSONObject().put("direction", setupBom + turnUp));
+                                        } else {
+                                            socket.emit(DRIVE_PLAYER, new JSONObject().put("direction", turnUp));
+                                        }
+                                    } else {
 
-                            } catch (JSONException e) {
-                                e.printStackTrace();
+                                        socket.emit(DRIVE_PLAYER, new JSONObject().put("direction", turnUp));
+
+                                    }
+
+                                } catch (JSONException e) {
+                                    e.printStackTrace();
+                                }
+                            } else {
+                                Thread.sleep(100);
+                                moving = movingY;
+                                getEnviroment(currentPostion, info);
                             }
                         } else {
-                            if (!isBombSetup) {
+                            if (typeTop == 0) {
+                                try {
+                                    //socket.emit(DRIVE_PLAYER, new JSONObject().put("direction", String.format("%d%d%d%d%d%d%d%d", i1,i2,i3,i4,i5,i6,i7,i8)));
+                                    if (bombEnemy) {
+                                        if (typeTopRight == 0 || typeTopLeft == 0) {
+                                            socket.emit(DRIVE_PLAYER, new JSONObject().put("direction", setupBom + turnUp));
+                                        } else {
+                                            socket.emit(DRIVE_PLAYER, new JSONObject().put("direction", turnUp));
+                                        }
+                                    } else {
+                                        socket.emit(DRIVE_PLAYER, new JSONObject().put("direction", turnUp));
+
+                                    }
+                                } catch (JSONException e) {
+                                    e.printStackTrace();
+                                }
+                            } else if (typeBottom == 0) {
+                                try {
+                                    //socket.emit(DRIVE_PLAYER, new JSONObject().put("direction", String.format("%d%d%d%d%d%d%d%d", i1,i2,i3,i4,i5,i6,i7,i8)));
+                                    if (bombEnemy) {
+                                        if (typeBottomRight == 0 || typeBottomLeft == 0) {
+                                            socket.emit(DRIVE_PLAYER, new JSONObject().put("direction", setupBom + turnDown));
+                                        } else {
+                                            socket.emit(DRIVE_PLAYER, new JSONObject().put("direction", turnDown));
+                                        }
+                                    } else {
+                                        socket.emit(DRIVE_PLAYER, new JSONObject().put("direction", turnDown));
+                                    }
+
+                                } catch (JSONException e) {
+                                    e.printStackTrace();
+                                }
+                            } else {
+                                Thread.sleep(300);
                                 moving = movingY;
                                 getEnviroment(currentPostion, info);
                             }
@@ -802,56 +772,6 @@ public class PlayerMgr {
 
     }
 
-    private static Info setEnemyPostion(Info info) {
-        try {
-            info.map.getMapInfo().map.map.myArrayList.get(info.map.getMapInfo().map.players.myArrayList.get(PLAYER_ID.contains(PLAYER_1) ? 1 : 0).map.currentPosition.map.row).myArrayList.set(info.map.getMapInfo().map.players.myArrayList.get(PLAYER_ID.contains(PLAYER_1) ? 1 : 0).map.currentPosition.map.col, enemy);
-//            System.out.println("TICKTACK_Enemy" + gson.toJson(info));
-        } catch (Exception e) {
-            return info;
-        }
-        return info;
-    }
-
-    private static Info setBombPosition(Info info) {
-        try {
-            for (BoomsMap booms : info.map.getMapInfo().map.bombs.myArrayList) {
-                int size = info.map.getMapInfo().map.players.myArrayList.get(booms.map.getPlayerId().equals(PLAYER_1) ? 0 : 1).map.power;
-                for (int i = 0; i <= size; i++) {
-                    try {
-                        if (info.map.getMapInfo().map.map.myArrayList.get(booms.map.getRow()).myArrayList.get(booms.map.getCol() + i) == 0) {
-                            info.map.getMapInfo().map.map.myArrayList.get(booms.map.getRow()).myArrayList.set(booms.map.getCol() + i, 1);
-                        }
-                    } catch (Exception e) {
-
-                    }
-                    try {
-                        if (info.map.getMapInfo().map.map.myArrayList.get(booms.map.getRow()).myArrayList.get(booms.map.getCol() - i) == 0) {
-                            info.map.getMapInfo().map.map.myArrayList.get(booms.map.getRow()).myArrayList.set(booms.map.getCol() - i, 1);
-                        }
-                    } catch (Exception e) {
-
-                    }
-                    try {
-                        if (info.map.getMapInfo().map.map.myArrayList.get(booms.map.getRow() + i).myArrayList.get(booms.map.getCol()) == 0) {
-                            info.map.getMapInfo().map.map.myArrayList.get(booms.map.getRow() + i).myArrayList.set(booms.map.getCol(), 1);
-                        }
-                    } catch (Exception e) {
-
-                    }
-                    try {
-                        if (info.map.getMapInfo().map.map.myArrayList.get(booms.map.getRow() - i).myArrayList.get(booms.map.getCol()) == 0) {
-                            info.map.getMapInfo().map.map.myArrayList.get(booms.map.getRow() - i).myArrayList.set(booms.map.getCol(), 1);
-                        }
-                    } catch (Exception e) {
-
-                    }
-                }
-            }
-            return info;
-        } catch (Exception e) {
-            return info;
-        }
-    }
 
     private static void setPlayer(Info info) {
         try {
@@ -862,292 +782,4 @@ public class PlayerMgr {
         }
     }
 
-    private static void getEnviroment1(Map_____ currentPostion, Info info) {
-        try {
-            Integer typeLeft = info.map.getMapInfo().map.map.myArrayList.get(currentPostion.row).myArrayList.get(currentPostion.col - 1);
-            Integer typeRight = info.map.getMapInfo().map.map.myArrayList.get(currentPostion.row).myArrayList.get(currentPostion.col + 1);
-            Integer typeTop = info.map.getMapInfo().map.map.myArrayList.get(currentPostion.row - 1).myArrayList.get(currentPostion.col);
-            Integer typeTopLeft = info.map.getMapInfo().map.map.myArrayList.get(currentPostion.row - 1).myArrayList.get(currentPostion.col - 1);
-            Integer typeBottomLeft = info.map.getMapInfo().map.map.myArrayList.get(currentPostion.row + 1).myArrayList.get(currentPostion.col - 1);
-            Integer typeTopRight = info.map.getMapInfo().map.map.myArrayList.get(currentPostion.row - 1).myArrayList.get(currentPostion.col + 1);
-            Integer typeBottomRight = info.map.getMapInfo().map.map.myArrayList.get(currentPostion.row + 1).myArrayList.get(currentPostion.col + 1);
-            Integer typeBottom = info.map.getMapInfo().map.map.myArrayList.get(currentPostion.row + 1).myArrayList.get(currentPostion.col);
-            Random rand = new Random();
-            int n = rand.nextInt(3);
-            switch (n) {
-                case 0:
-                    if (typeLeft == 0) {
-                        move = move + turnLeft;
-                        int n1 = rand.nextInt(1);
-                        switch (n1) {
-                            case 0:
-                                if (typeTopLeft == 0) {
-                                    move = move + turnUp;
-                                    try {
-                                        //socket.emit(DRIVE_PLAYER, new JSONObject().put("direction", String.format("%d%d%d%d%d%d%d%d", i1,i2,i3,i4,i5,i6,i7,i8)));
-                                        socket.emit(DRIVE_PLAYER, new JSONObject().put("direction", move.toString()));
-                                        move = "";
-                                    } catch (JSONException e) {
-                                        e.printStackTrace();
-                                    }
-                                } else if (typeBottomLeft == 0) {
-                                    move = move + turnDown;
-                                    try {
-                                        //socket.emit(DRIVE_PLAYER, new JSONObject().put("direction", String.format("%d%d%d%d%d%d%d%d", i1,i2,i3,i4,i5,i6,i7,i8)));
-                                        socket.emit(DRIVE_PLAYER, new JSONObject().put("direction", move.toString()));
-                                        move = "";
-
-                                    } catch (JSONException e) {
-                                        e.printStackTrace();
-                                    }
-                                }
-                            case 1:
-                                if (typeBottomLeft == 0) {
-                                    move = move + turnDown;
-                                    try {
-                                        //socket.emit(DRIVE_PLAYER, new JSONObject().put("direction", String.format("%d%d%d%d%d%d%d%d", i1,i2,i3,i4,i5,i6,i7,i8)));
-                                        socket.emit(DRIVE_PLAYER, new JSONObject().put("direction", move.toString()));
-
-                                        move = "";
-
-                                    } catch (JSONException e) {
-                                        e.printStackTrace();
-                                    }
-                                } else if (typeTopLeft == 0) {
-                                    move = move + turnUp;
-                                    try {
-                                        //socket.emit(DRIVE_PLAYER, new JSONObject().put("direction", String.format("%d%d%d%d%d%d%d%d", i1,i2,i3,i4,i5,i6,i7,i8)));
-                                        socket.emit(DRIVE_PLAYER, new JSONObject().put("direction", move.toString()));
-
-                                        move = "";
-
-                                    } catch (JSONException e) {
-                                        e.printStackTrace();
-                                    }
-                                }
-
-                        }
-                    } else {
-                        getEnviroment1(currentPostion, info);
-                    }
-                case 1:
-                    if (typeRight == 0) {
-                        move = move + turnRight;
-                        int n1 = rand.nextInt(1);
-                        switch (n1) {
-                            case 0:
-                                if (typeTopRight == 0) {
-                                    move = move + turnUp;
-                                    try {
-                                        //socket.emit(DRIVE_PLAYER, new JSONObject().put("direction", String.format("%d%d%d%d%d%d%d%d", i1,i2,i3,i4,i5,i6,i7,i8)));
-                                        socket.emit(DRIVE_PLAYER, new JSONObject().put("direction", move.toString()));
-                                        move = "";
-
-                                    } catch (JSONException e) {
-                                        e.printStackTrace();
-                                    }
-                                } else if (typeBottomRight == 0) {
-                                    move = move + turnDown;
-                                    try {
-                                        //socket.emit(DRIVE_PLAYER, new JSONObject().put("direction", String.format("%d%d%d%d%d%d%d%d", i1,i2,i3,i4,i5,i6,i7,i8)));
-                                        socket.emit(DRIVE_PLAYER, new JSONObject().put("direction", move.toString()));
-
-                                        move = "";
-
-                                    } catch (JSONException e) {
-                                        e.printStackTrace();
-                                    }
-                                }
-                            case 1:
-                                if (typeBottomRight == 0) {
-                                    move = move + turnDown;
-                                    try {
-                                        //socket.emit(DRIVE_PLAYER, new JSONObject().put("direction", String.format("%d%d%d%d%d%d%d%d", i1,i2,i3,i4,i5,i6,i7,i8)));
-                                        socket.emit(DRIVE_PLAYER, new JSONObject().put("direction", move.toString()));
-
-                                        move = "";
-
-                                    } catch (JSONException e) {
-                                        e.printStackTrace();
-                                    }
-                                } else if (typeTopRight == 0) {
-                                    move = move + turnUp;
-                                    try {
-                                        //socket.emit(DRIVE_PLAYER, new JSONObject().put("direction", String.format("%d%d%d%d%d%d%d%d", i1,i2,i3,i4,i5,i6,i7,i8)));
-                                        socket.emit(DRIVE_PLAYER, new JSONObject().put("direction", move.toString()));
-
-                                        move = "";
-
-                                    } catch (JSONException e) {
-                                        e.printStackTrace();
-                                    }
-                                }
-
-                        }
-                    } else {
-                        getEnviroment1(currentPostion, info);
-                    }
-                case 2:
-                    if (typeBottom == 0) {
-                        move = move + turnDown;
-                        int n1 = rand.nextInt(1);
-                        switch (n1) {
-                            case 0:
-                                if (typeBottomLeft == 0) {
-                                    move = move + turnLeft;
-                                    try {
-                                        //socket.emit(DRIVE_PLAYER, new JSONObject().put("direction", String.format("%d%d%d%d%d%d%d%d", i1,i2,i3,i4,i5,i6,i7,i8)));
-                                        socket.emit(DRIVE_PLAYER, new JSONObject().put("direction", move.toString()));
-
-                                        move = "";
-
-                                    } catch (JSONException e) {
-                                        e.printStackTrace();
-                                    }
-                                } else if (typeBottomRight == 0) {
-                                    move = move + turnRight;
-                                    try {
-                                        //socket.emit(DRIVE_PLAYER, new JSONObject().put("direction", String.format("%d%d%d%d%d%d%d%d", i1,i2,i3,i4,i5,i6,i7,i8)));
-                                        socket.emit(DRIVE_PLAYER, new JSONObject().put("direction", move.toString()));
-
-                                        move = "";
-
-                                    } catch (JSONException e) {
-                                        e.printStackTrace();
-                                    }
-                                }
-                            case 1:
-                                if (typeBottomRight == 0) {
-                                    move = move + turnRight;
-                                    try {
-                                        //socket.emit(DRIVE_PLAYER, new JSONObject().put("direction", String.format("%d%d%d%d%d%d%d%d", i1,i2,i3,i4,i5,i6,i7,i8)));
-                                        socket.emit(DRIVE_PLAYER, new JSONObject().put("direction", move.toString()));
-
-                                        move = "";
-
-                                    } catch (JSONException e) {
-                                        e.printStackTrace();
-                                    }
-                                } else if (typeBottomLeft == 0) {
-                                    move = move + turnLeft;
-                                    try {
-                                        //socket.emit(DRIVE_PLAYER, new JSONObject().put("direction", String.format("%d%d%d%d%d%d%d%d", i1,i2,i3,i4,i5,i6,i7,i8)));
-                                        socket.emit(DRIVE_PLAYER, new JSONObject().put("direction", move.toString()));
-
-                                        move = "";
-
-                                    } catch (JSONException e) {
-                                        e.printStackTrace();
-                                    }
-                                }
-
-                        }
-                    } else {
-                        getEnviroment1(currentPostion, info);
-                    }
-                case 3:
-                    if (typeTop == 0) {
-                        move = move + turnUp;
-                        int n1 = rand.nextInt(1);
-                        switch (n1) {
-                            case 0:
-                                if (typeTopLeft == 0) {
-                                    move = move + turnLeft;
-                                    try {
-                                        //socket.emit(DRIVE_PLAYER, new JSONObject().put("direction", String.format("%d%d%d%d%d%d%d%d", i1,i2,i3,i4,i5,i6,i7,i8)));
-                                        socket.emit(DRIVE_PLAYER, new JSONObject().put("direction", move.toString()));
-
-                                        move = "";
-
-                                    } catch (JSONException e) {
-                                        e.printStackTrace();
-                                    }
-                                } else if (typeTopRight == 0) {
-                                    move = move + turnRight;
-                                    try {
-                                        //socket.emit(DRIVE_PLAYER, new JSONObject().put("direction", String.format("%d%d%d%d%d%d%d%d", i1,i2,i3,i4,i5,i6,i7,i8)));
-                                        socket.emit(DRIVE_PLAYER, new JSONObject().put("direction", move.toString()));
-
-                                        move = "";
-
-                                    } catch (JSONException e) {
-                                        e.printStackTrace();
-                                    }
-                                }
-                            case 1:
-                                if (typeTopRight == 0) {
-                                    move = move + turnRight;
-                                    try {
-                                        //socket.emit(DRIVE_PLAYER, new JSONObject().put("direction", String.format("%d%d%d%d%d%d%d%d", i1,i2,i3,i4,i5,i6,i7,i8)));
-                                        socket.emit(DRIVE_PLAYER, new JSONObject().put("direction", move.toString()));
-
-                                        move = "";
-
-                                    } catch (JSONException e) {
-                                        e.printStackTrace();
-                                    }
-                                } else if (typeTopLeft == 0) {
-                                    move = move + turnLeft;
-                                    try {
-                                        //socket.emit(DRIVE_PLAYER, new JSONObject().put("direction", String.format("%d%d%d%d%d%d%d%d", i1,i2,i3,i4,i5,i6,i7,i8)));
-                                        socket.emit(DRIVE_PLAYER, new JSONObject().put("direction", move.toString()));
-
-                                        move = "";
-
-                                    } catch (JSONException e) {
-                                        e.printStackTrace();
-                                    }
-                                }
-
-                        }
-                    } else {
-                        getEnviroment1(currentPostion, info);
-                    }
-            }
-
-        } catch (Exception e) {
-
-        }
-    }
-
-    private static boolean test(Map_____ currentPostion, Info info) {
-        try {
-            Integer typeLeft = info.map.getMapInfo().map.map.myArrayList.get(currentPostion.row).myArrayList.get(currentPostion.col - 1);
-            Integer typeRight = info.map.getMapInfo().map.map.myArrayList.get(currentPostion.row).myArrayList.get(currentPostion.col + 1);
-            Integer typeTop = info.map.getMapInfo().map.map.myArrayList.get(currentPostion.row - 1).myArrayList.get(currentPostion.col);
-            Integer typeTopLeft = info.map.getMapInfo().map.map.myArrayList.get(currentPostion.row - 1).myArrayList.get(currentPostion.col - 1);
-            Integer typeBottomLeft = info.map.getMapInfo().map.map.myArrayList.get(currentPostion.row + 1).myArrayList.get(currentPostion.col - 1);
-            Integer typeTopRight = info.map.getMapInfo().map.map.myArrayList.get(currentPostion.row - 1).myArrayList.get(currentPostion.col + 1);
-            Integer typeBottomRight = info.map.getMapInfo().map.map.myArrayList.get(currentPostion.row + 1).myArrayList.get(currentPostion.col + 1);
-            Integer typeBottom = info.map.getMapInfo().map.map.myArrayList.get(currentPostion.row + 1).myArrayList.get(currentPostion.col);
-
-
-            boolean isEatStones = false;
-            for (SpoilsList spoilsList : info.map.getMapInfo().map.spoils.myArrayList) {
-                if (spoilsList.map.row == currentPostion.row && spoilsList.map.col == currentPostion.col + 1 && !isBombSetup) {
-                    socket.emit(DRIVE_PLAYER, new JSONObject().put("direction", turnRight));
-                    isEatStones = true;
-                    break;
-                }
-                if (spoilsList.map.row == currentPostion.row && spoilsList.map.col == currentPostion.col - 1 && !isBombSetup) {
-                    socket.emit(DRIVE_PLAYER, new JSONObject().put("direction", turnLeft));
-                    isEatStones = true;
-                    break;
-                }
-                if (spoilsList.map.row == currentPostion.row - 1 && spoilsList.map.col == currentPostion.col && !isBombSetup) {
-                    socket.emit(DRIVE_PLAYER, new JSONObject().put("direction", turnUp));
-                    isEatStones = true;
-                    break;
-                }
-                if (spoilsList.map.row == currentPostion.row + 1 && spoilsList.map.col == currentPostion.col && !isBombSetup) {
-                    socket.emit(DRIVE_PLAYER, new JSONObject().put("direction", turnDown));
-                    isEatStones = true;
-                    break;
-                }
-            }
-        } catch (Exception e) {
-            return false;
-        }
-        return false;
-    }
 }
